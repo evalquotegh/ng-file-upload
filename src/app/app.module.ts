@@ -8,10 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
-import { ImagesComponent } from './images/images.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
-  declarations: [AppComponent, FileUploadComponent, ImagesComponent],
+  declarations: [AppComponent, FileUploadComponent, ImageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
