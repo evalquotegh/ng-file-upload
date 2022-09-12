@@ -1,0 +1,5 @@
+<input type="file" hidden (change)="onFileSelected($event)" #fileUpload />
+<button mat-raised-button color="primary" (click)="fileUpload.click()">
+  Upload
+  <mat-icon>file_upload</mat-icon>
+</button>
