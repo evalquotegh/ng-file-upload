@@ -1,12 +1,15 @@
 <div *ngIf="imageList$ | async as imageList">
   <ul>
     <li *ngFor="let image of imageList">
-      <img
-        [src]="getThumbnail(image.url)"
-        [width]="64"
-        [height]="64"
-        [alt]="image.original_filename"
-      />
+      <figure>
+        <img
+          [src]="getThumbnail(image.url)"
+          [width]="64"
+          [height]="64"
+          [alt]="image.original_filename"
+        />
+        <figcaption>{{ image.original_filename }}</figcaption>
+      </figure>
     </li>
   </ul>
 </div>
