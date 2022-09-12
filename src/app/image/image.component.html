@@ -2,9 +2,9 @@
   <ul>
     <li *ngFor="let image of imageList">
       <img
-        [src]="image.url"
-        [width]="image.width"
-        [height]="image.height"
+        [src]="getThumbnail(image.url)"
+        [width]="64"
+        [height]="64"
         [alt]="image.original_filename"
       />
     </li>
