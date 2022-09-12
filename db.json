@@ -1,28 +1,26 @@
-[
-  {
-    "images": [
-      {
-        "asset_id": "7e3eef09f198b420857504d2d9f14882",
-        "public_id": "n9tt5veairs1sovgeocy",
-        "version": 1662993952,
-        "version_id": "c2769ad6bca9110623417eb53f1ec894",
-        "signature": "bf4919d4fcc8ae5a4c0cc6e800f4738882ff11d0",
-        "width": 512,
-        "height": 512,
-        "format": "png",
-        "resource_type": "image",
-        "created_at": "2022-09-12T14:45:52Z",
-        "tags": [],
-        "bytes": 97356,
-        "type": "upload",
-        "etag": "5dd00dfa18f7cf3eb166adb5584ad709",
-        "placeholder": false,
-        "url": "http://res.cloudinary.com/evalquote/image/upload/v1662993952/n9tt5veairs1sovgeocy.png",
-        "secure_url": "https://res.cloudinary.com/evalquote/image/upload/v1662993952/n9tt5veairs1sovgeocy.png",
-        "folder": "",
-        "access_mode": "public",
-        "original_filename": "evalquote-as-logo"
-      }
-    ]
-  }
-]
+{
+  "images": [
+    {
+      "asset_id": "7e3eef09f198b420857504d2d9f14882",
+      "public_id": "n9tt5veairs1sovgeocy",
+      "version": 1662993952,
+      "version_id": "c2769ad6bca9110623417eb53f1ec894",
+      "signature": "bf4919d4fcc8ae5a4c0cc6e800f4738882ff11d0",
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "resource_type": "image",
+      "created_at": "2022-09-12T14:45:52Z",
+      "tags": [],
+      "bytes": 97356,
+      "type": "upload",
+      "etag": "5dd00dfa18f7cf3eb166adb5584ad709",
+      "placeholder": false,
+      "url": "http://res.cloudinary.com/evalquote/image/upload/v1662993952/n9tt5veairs1sovgeocy.png",
+      "secure_url": "https://res.cloudinary.com/evalquote/image/upload/v1662993952/n9tt5veairs1sovgeocy.png",
+      "folder": "",
+      "access_mode": "public",
+      "original_filename": "evalquote-as-logo"
+    }
+  ]
+}
