@@ -16,4 +16,9 @@ export class ImageComponent implements OnInit {
   ngOnInit(): void {
     this.imageList$ = this.imageService.getImageList();
   }
+
+  getThumbnail(url: string, width: number = 64, height: number = 64): string {
+    const fileName = url.split('/').slice(-1);
+    return `https://res.cloudinary.com/evalquote/image/upload/w_${width},h_${height},c_fill/${fileName}`;
+  }
 }
