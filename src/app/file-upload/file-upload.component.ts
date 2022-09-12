@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Image } from './file-upload.model';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FileUploadService } from './file-upload.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -8,23 +7,16 @@ import { Image } from './file-upload.model';
   styleUrls: ['./file-upload.component.css'],
 })
 export class FileUploadComponent implements OnInit {
-  constructor(private httpClient: HttpClient) {}
+  @Output() fileUploadEmitter = new EventEmitter<FileList>();
+
+  constructor(private fileUploadService: FileUploadService) {}
 
   ngOnInit(): void {}
 
   onFileSelected(event: Event): void {
     const target = event.target as HTMLInputElement;
     const files = target.files as FileList;
-    const formData = new FormData();
-    const url = 'https://api.cloudinary.com/v1_1/evalquote/image/upload';
 
-    if (files) {
-      formData.append('file', files[0]);
-      formData.append('upload_preset', 'dqgb6v4t');
-
-      this.httpClient
-        .post<Image>(url, formData)
-        .subscribe((response) => console.log(response));
-    }
+    if (files) this.fileUploadEmitter.emit(files);
   }
 }

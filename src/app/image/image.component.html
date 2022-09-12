@@ -1,0 +1,12 @@
+<div *ngIf="imageList$ | async as imageList">
+  <ul>
+    <li *ngFor="let image of imageList">
+      <img
+        [src]="image.url"
+        [width]="image.width"
+        [height]="image.height"
+        [alt]="image.original_filename"
+      />
+    </li>
+  </ul>
+</div>
