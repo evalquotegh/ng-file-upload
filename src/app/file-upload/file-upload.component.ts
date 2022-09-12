@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Image } from './file-upload.model';
 
 @Component({
   selector: 'app-file-upload',
@@ -22,7 +23,7 @@ export class FileUploadComponent implements OnInit {
       formData.append('upload_preset', 'dqgb6v4t');
 
       this.httpClient
-        .post<FileList>(url, formData)
+        .post<Image>(url, formData)
         .subscribe((response) => console.log(response));
     }
   }
