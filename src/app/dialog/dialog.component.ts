@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
+  fileName: string;
 }
 
 @Component({
@@ -11,7 +11,16 @@ export interface DialogData {
   styleUrls: ['./dialog.component.css'],
 })
 export class DialogComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  public fileName: string = this.data.fileName;
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ) {}
 
   ngOnInit(): void {}
+
+  saveDialog(): void {
+    this.dialogRef.close({ fileName: this.fileName });
+  }
 }

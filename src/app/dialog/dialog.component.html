@@ -1,2 +1,25 @@
-<h1>{{ data.animal }}</h1>
-<p>dialog works!</p>
+<form #dialogForm="ngForm">
+  <mat-form-field class="filename" appearance="fill">
+    <mat-label>File Name</mat-label>
+    <input
+      matInput
+      type="text"
+      [value]="fileName"
+      name="fileName"
+      [(ngModel)]="fileName"
+    />
+    <button
+      *ngIf="fileName"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="fileName = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary" (click)="saveDialog()">
+    Upload
+  </button>
+</form>

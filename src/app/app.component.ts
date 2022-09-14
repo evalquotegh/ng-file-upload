@@ -11,6 +11,7 @@ import { ImageService } from './image/image.service';
 })
 export class AppComponent {
   public title: string = 'ng-file-upload';
+  public fileName: string = '';
 
   constructor(
     private fileUploadService: FileUploadService,
@@ -19,21 +20,22 @@ export class AppComponent {
   ) {}
 
   uploadFile(files: FileList): void {
-    this.fileUploadService
-      .uploadFile(files[0])
-      .subscribe((cloudinaryResponse) => {
-        this.openDialog(DialogComponent, {
-          data: {
-            animal: 'panda',
-          },
-        });
-        // this.imageService
-        //   .addImage(cloudinaryResponse)
-        //   .subscribe((jsonServerResponse) => console.log(jsonServerResponse))
-      });
-  }
+    const data = { data: { fileName: files[0].name } };
+    const dialogRef = this.dialog.open(DialogComponent, data);
 
-  openDialog(component: any, data: any): void {
-    this.dialog.open(component, data);
+    dialogRef.afterClosed().subscribe((result) => {
+      this.fileName = result.fileName;
+
+      this.fileUploadService
+        .uploadFile(files[0], this.fileName)
+        .subscribe((cloudinaryResponse) => {
+          console.log('cloudinaryResponse', cloudinaryResponse);
+          this.imageService
+            .addImage(cloudinaryResponse)
+            .subscribe((jsonServerResponse) =>
+              console.log('jsonServerResponse', jsonServerResponse)
+            );
+        });
+    });
   }
 }
