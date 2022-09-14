@@ -9,9 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ImageComponent } from './image/image.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, FileUploadComponent, ImageComponent],
+  declarations: [AppComponent, FileUploadComponent, ImageComponent, DialogComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
