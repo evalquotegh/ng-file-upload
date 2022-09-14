@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FileUploadService } from './file-upload.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -9,7 +8,7 @@ import { FileUploadService } from './file-upload.service';
 export class FileUploadComponent implements OnInit {
   @Output() fileUploadEmitter = new EventEmitter<FileList>();
 
-  constructor(private fileUploadService: FileUploadService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 

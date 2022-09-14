@@ -9,11 +9,12 @@ import { Image } from './file-upload.model';
 export class FileUploadService {
   constructor(private httpClient: HttpClient) {}
 
-  uploadFile(file: File): Observable<Image> {
+  uploadFile(file: File, fileName: string): Observable<Image> {
     const url = 'https://api.cloudinary.com/v1_1/evalquote/image/upload';
     const formData = new FormData();
 
-    formData.append('file', file);
+    console.log(file, fileName);
+    formData.append('file', file, fileName);
     formData.append('upload_preset', 'dqgb6v4t');
 
     return this.httpClient.post<Image>(url, formData);
